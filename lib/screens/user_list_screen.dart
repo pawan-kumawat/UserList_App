@@ -33,11 +33,11 @@ class _UserListScreenState extends State<UserListScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('User List'),
+        title: const Text('User List'),
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(50.0),
+          preferredSize: const Size.fromHeight(50.0),
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.0),
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: TextField(
               onChanged: (query) {
                 setState(() {
@@ -49,7 +49,7 @@ class _UserListScreenState extends State<UserListScreen> {
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8.0),
                 ),
-                prefixIcon: Icon(Icons.search),
+                prefixIcon: const Icon(Icons.search),
               ),
             ),
           ),
@@ -58,7 +58,7 @@ class _UserListScreenState extends State<UserListScreen> {
       body: GestureDetector(
         onTap: _dismissKeyboard,
         child: userProvider.isLoading
-            ? Center(child: CircularProgressIndicator())
+            ? const Center(child: CircularProgressIndicator())
             : userProvider.error != null
             ? Center(child: Text('Error: ${userProvider.error}'))
             : RefreshIndicator(
